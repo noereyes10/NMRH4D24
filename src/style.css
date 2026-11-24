@@ -497,7 +497,7 @@ body {
    SLIDER DE IMÁGENES ESTILO HUD
    ========================================= */
 .slider-section {
-  max-width: 1200px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 2rem 2rem 4rem;
 }
@@ -505,18 +505,31 @@ body {
 .hud-slider {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: auto;
+  min-height: 360px;
+  max-height: 620px;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--cyan-neon);
   box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
   background-color: var(--bg-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slides-container {
   position: relative;
   width: 100%;
+  height: 540px;
+}
+
+.slide img {
+  width: 100%;
   height: 100%;
+  object-fit: contain;
+  filter: none;
+  background-color: #040b1a;
 }
 
 .slide {
@@ -532,22 +545,12 @@ body {
   pointer-events: auto;
 }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75) contrast(1.1);
-}
+
 
 /* Caja de texto sobre la imagen */
-.slide-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2.5rem 2rem 2rem;
-  background: linear-gradient(to top, rgba(4, 11, 26, 0.95) 20%, rgba(4, 11, 26, 0.6) 75%, transparent 100%);
-  border-top: 1px solid rgba(0, 240, 255, 0.25);
+
+.slide.no-caption .slide-caption {
+  display: none;
 }
 
 .slide-caption h3 {
